@@ -40,7 +40,6 @@ type TouchWithForce = Touch & {
   force: number,
 };
 
-
 export const forcePressThreshold: number = 0.15;
 const touchStartMarshal: EventMarshal = createEventMarshal();
 const noop = (): void => {};
@@ -53,7 +52,7 @@ export default function useTouchSensor(args: Args): OnTouchStart {
     getShouldRespectForcePress,
     onCaptureStart,
     onCaptureEnd,
-    longPressTimeout
+    longPressTimeout,
   } = args;
   const pendingRef = useRef<?PendingDrag>(null);
   const isDraggingRef = useRef<boolean>(false);
@@ -356,7 +355,7 @@ export default function useTouchSensor(args: Args): OnTouchStart {
       onCaptureStart(stop);
       bindWindowEvents();
     },
-    [bindWindowEvents, onCaptureStart, startDragging, stop],
+    [bindWindowEvents, longPressTimeout, onCaptureStart, startDragging, stop],
   );
 
   const onTouchStart = (event: TouchEvent) => {

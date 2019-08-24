@@ -65,6 +65,7 @@ export default function useDragHandle(args: Args): ?DragHandleProps {
     getDraggableRef,
     getShouldRespectForcePress,
     canDragInteractiveElements,
+    longPressTimeout,
   } = args;
   const lastArgsRef = usePreviousRef(args);
 

@@ -141,7 +141,7 @@ export default function Draggable(props: Props) {
       getDraggableRef: getRef,
       canDragInteractiveElements,
       getShouldRespectForcePress,
-      longPressTimeout
+      longPressTimeout,
     }),
     [
       callbacks,
