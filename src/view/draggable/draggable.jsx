@@ -44,6 +44,7 @@ export default function Draggable(props: Props) {
     draggableId,
     isDragDisabled,
     shouldRespectForcePress,
+    longPressTimeout,
     disableInteractiveElementBlocking: canDragInteractiveElements,
     index,
 
@@ -140,6 +141,7 @@ export default function Draggable(props: Props) {
       getDraggableRef: getRef,
       canDragInteractiveElements,
       getShouldRespectForcePress,
+      longPressTimeout
     }),
     [
       callbacks,
@@ -150,6 +152,7 @@ export default function Draggable(props: Props) {
       isDragDisabled,
       isDragging,
       isDropAnimating,
+      longPressTimeout,
     ],
   );
 

@@ -142,6 +142,7 @@ export type DefaultProps = {|
   isDragDisabled: boolean,
   disableInteractiveElementBlocking: boolean,
   shouldRespectForcePress: boolean,
+  longPressTimeout: number,
 |};
 
 export type OwnProps = {|
