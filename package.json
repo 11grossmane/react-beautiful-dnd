@@ -1,5 +1,5 @@
 {
-  "name": "react-beautiful-dnd",
+  "name": "@itswendell/react-beautiful-dnd",
   "version": "11.0.5",
   "description": "Beautiful and accessible drag and drop for lists with React",
   "author": "Alex Reardon <areardon@atlassian.com>",
@@ -32,7 +32,6 @@
     "prettier_target": "*.{js,jsx,md,json} src/**/*.{js,jsx,md,json} test/**/*.{js,jsx,md,json} docs/**/*.{js,jsx,md,json} stories/**/*.{js,jsx,md,json} cypress/**/*.{js,jsx,md,json}"
   },
   "scripts": {
-    "prepare": "yarn build",
     "test": "jest --config ./jest.config.js",
     "test:ci": "jest test --maxWorkers=2",
     "test:browser": "cypress open",
