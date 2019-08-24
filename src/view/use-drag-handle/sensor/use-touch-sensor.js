@@ -25,6 +25,9 @@ export type Args = {|
   getShouldRespectForcePress: () => boolean,
   onCaptureStart: (abort: () => void) => void,
   onCaptureEnd: () => void,
+  // Decreased from 150 as a work around for an issue for forcepress on iOS
+  // https://github.com/atlassian/react-beautiful-dnd/issues/1401
+  longPressTimeout: 120,
 |};
 export type OnTouchStart = (event: TouchEvent) => void;
 
@@ -37,9 +40,7 @@ type TouchWithForce = Touch & {
   force: number,
 };
 
-// Decreased from 150 as a work around for an issue for forcepress on iOS
-// https://github.com/atlassian/react-beautiful-dnd/issues/1401
-export const timeForLongPress: number = 120;
+
 export const forcePressThreshold: number = 0.15;
 const touchStartMarshal: EventMarshal = createEventMarshal();
 const noop = (): void => {};
@@ -52,6 +53,7 @@ export default function useTouchSensor(args: Args): OnTouchStart {
     getShouldRespectForcePress,
     onCaptureStart,
     onCaptureEnd,
+    longPressTimeout
   } = args;
   const pendingRef = useRef<?PendingDrag>(null);
   const isDraggingRef = useRef<boolean>(false);
@@ -342,7 +344,7 @@ export default function useTouchSensor(args: Args): OnTouchStart {
       };
       const longPressTimerId: TimeoutID = setTimeout(
         startDragging,
-        timeForLongPress,
+        longPressTimeout,
       );
 
       const pending: PendingDrag = {

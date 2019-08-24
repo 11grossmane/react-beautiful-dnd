@@ -314,6 +314,8 @@ const defaultProps = ({
   // Not respecting browser force touch interaction
   // by default for a more consistent experience
   shouldRespectForcePress: false,
+  // Customize touch timeout
+  touchTimeout: 120,
 }: DefaultProps);
 
 // Abstract class allows to specify props and defaults to component.
