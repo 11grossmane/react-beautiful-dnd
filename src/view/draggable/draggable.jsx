@@ -58,6 +58,7 @@ export default function Draggable(props: Props) {
     moveDown: moveDownAction,
     moveRight: moveRightAction,
     moveLeft: moveLeftAction,
+    moveByWindowScroll: moveByWindowScrollAction,
     lift: liftAction,
     dropAnimationFinished: dropAnimationFinishedAction,
   } = props;
@@ -109,6 +110,10 @@ export default function Draggable(props: Props) {
       onMoveDown: moveDownAction,
       onMoveRight: moveRightAction,
       onMoveLeft: moveLeftAction,
+      onWindowScroll: () =>
+        moveByWindowScrollAction({
+          newScroll: getWindowScroll(),
+        }),
     }),
     [
       dropAction,
