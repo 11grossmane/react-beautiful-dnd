@@ -7833,7 +7833,7 @@
 	});
 
 	var config = {
-	  startFromPercentage: 0.25,
+	  startFromPercentage: 0,
 	  maxScrollAtPercentage: 0.05,
 	  maxPixelScroll: 28,
 	  ease: function ease(percentage) {
