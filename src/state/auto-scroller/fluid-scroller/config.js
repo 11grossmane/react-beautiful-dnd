@@ -4,7 +4,7 @@
 const config = {
   // percentage distance from edge of container:
   startFromPercentage: 0,
-  maxScrollAtPercentage: 0.05,
+  maxScrollAtPercentage: 0,
   // pixels per frame
   maxPixelScroll: 28,
 

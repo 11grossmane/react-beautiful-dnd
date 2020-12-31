@@ -7834,7 +7834,7 @@
 
 	var config = {
 	  startFromPercentage: 0,
-	  maxScrollAtPercentage: 0.05,
+	  maxScrollAtPercentage: 0,
 	  maxPixelScroll: 28,
 	  ease: function ease(percentage) {
 	    return Math.pow(percentage, 2);
