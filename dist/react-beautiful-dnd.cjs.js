@@ -4438,8 +4438,8 @@ var getBestScrollableDroppable = (function (_ref) {
 });
 
 var config = {
-  startFromPercentage: 0,
-  maxScrollAtPercentage: 0,
+  startFromPercentage: -Infinity,
+  maxScrollAtPercentage: -Infinity,
   maxPixelScroll: 28,
   ease: function ease(percentage) {
     return Math.pow(percentage, 2);
